@@ -4,16 +4,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.1.18/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <script src="//cdn.muicss.com/mui-0.1.18/js/mui.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+    <script>
+      // loadjs
+      !function(n,t){function e(n,t){var e,o,r,i,u,c,f;for(n=n.push?n:[n],o=n.length,e=[],r=function(n,r){r.length&&e.push(n),o-=1,0===o&&t(e)},u=n.length-1;u>-1;u--)i=n[u],c=a[i],c?r(i,c):(f=h[i]=h[i]||[],f.push(r))}function o(n,t){var e=h[n];if(a[n]=t,e)for(;e.length;)e[0](n,t),e.splice(0,1)}function r(n,e){var o=t.createElement("script");o.style="text/javascript",o.async=!0,o.src=n,o.onload=o.onerror=function(t){o.parentNode.removeChild(o),o=null,e(n,t.type)},c.appendChild(o)}function i(n,t){var e,o,i=n.length,u=[];for(e=function(n,e){"error"===e&&u.push(n),i-=1,0===i&&t(u)},o=n.length-1;o>-1;o--)r(n[o],e)}function u(t,e,r,u){var c,a,h;if(t=t.push?t:[t],e&&!e.call&&(c=e),a=c?r:e,h=c?u:r,c){if(c in l)throw new Error("LoadJS: Bundle already defined");l[c]=!0}n.setTimeout(function(){i(t,function(n){n.length?(h||f)(n):(a||f)(),c&&o(c,n)})},0)}var c=t.head,f=function(){},l={},a={},h={};u.ready=function(n,t,o){return n=n.push?n:[n],e(n,function(n){n.length?(o||f)(n):(t||f)()}),u},u.done=function(n){n&&o(n,[])},n.loadjs=u}(window,document);
+      
+      // Google Analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date()})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54433605-3', 'auto');
+      ga('send', 'pageview');
+
+      window.addEventListener('load', function() {
+        loadjs('//www.google-analytics.com/analytics.js');
+        loadjs('//cdn.muicss.com/mui-0.1.18/js/mui.min.js');
+      });
+    </script>
   </head>
   <body>
     <!-- example content -->
     <div class="mui-container">
       <div class="mui-panel">
-        <h1>My Title</h1>
-        <button class="mui-btn mui-btn-primary mui-btn-raised">My Button</button>
+        <h1 class="mui-text-display2">LoadJS</h1>
+        <h2 class="mui-text-headline">A tiny async loader for modern browsers (590 bytes)</h2>
+        <h3>Documentation</h3>
+<pre><code class="language-javascript">
+loadjs(['foo.js', 'bar.js'], function() {
+  // test
+});
+</code></pre>
       </div>
     </div>
   </body>
